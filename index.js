@@ -14,7 +14,7 @@ formList.addEventListener("submit", async (e)=>{
   
 
     try{
-         const response = await fetch('https://portfoliobackend-ezq1.onrender.com', {
+         const response = await fetch('https://portfoliobackend-ezq1.onrender.com/ap1/contact', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
