@@ -21,6 +21,8 @@ formList.addEventListener("submit", async (e) => {
 
     const result = await response.json();  // ✅ Properly wait for JSON
     alert(result.message);  // ✅ Make sure your backend sends this field
+    formData.reset()
+
   } catch (error) {
     alert("Error sending message");
     console.error("Error:", error);
