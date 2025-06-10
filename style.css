@@ -4,7 +4,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  overflow-x: hidden;
+
 }
 .sec1 {
   width: 80%;
@@ -12,42 +12,47 @@
   margin: auto;
   margin-top: 2em;
 }
+/* Navbar Styling */
 .nav {
   display: flex;
-  flex-direction: row;
   justify-content: space-between;
   align-items: center;
   height: 6rem;
-  width: 100vw;
+  width: 100%;
   background-color: #8d63dd;
   position: fixed;
-  padding: 0 10rem;
+  top: 0;
+  left: 0;
+  padding: 0 5%;
   z-index: 10;
-
+  box-sizing: border-box;
 }
 
-.nav h1{
+/* Logo */
+.nav h1 {
   color: #e7e7e7;
+  font-size: 1.8rem;
 }
 
-
+/* Links List */
 .info {
   display: flex;
-  flex-direction: row; 
-  max-width: 20em;
-  width: 70%;
-  justify-content: space-evenly;
-  font-size: 1.5rem;
-  color: rgb(112, 226, 94);
+  gap: 2rem;
+  list-style: none;
+  font-size: 1.2rem;
+  margin: 0;
+  padding: 0;
 }
 
+/* Individual Links */
 nav a {
-  color: white;  /* ya koi bhi color jaise blue, red, etc. */
-  text-decoration: none;  /* underline hataane ke liye */
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s;
 }
 
 nav a:hover {
-  color: yellow;  /* jab hover kare to color change ho jaye */
+  color: yellow;
 }
 
 .container {
@@ -89,6 +94,12 @@ h1 {
   border: none;
   margin-top: 1.5rem;
 }
+
+.btn:hover {
+  background-color: darkred;
+  cursor: pointer;
+}
+
 .btn a {
   font-size: 1.5rem;
   color: white;
@@ -112,8 +123,7 @@ h1 {
 }
 
 
-
-/* project  */
+/* projects section */
 body {
   font-family: Arial, sans-serif;
   margin: 0;
@@ -128,7 +138,6 @@ body {
 
 .projects-section h2 {
   font-size: 38px;
-
 }
 
 .projects-container {
@@ -136,21 +145,26 @@ body {
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 50px;
   max-width: 1200px;
-  margin: auto ;
-  padding: 5em 5rem ;
+  margin: auto;
+  padding: 5em 2rem;
+  overflow: hidden;
+  border-radius: 8px;
 }
 
+
+/* Project Card Styles */
 .project-card {
   background: white;
   border-radius: 8px;
-  padding: 20px ;
+  padding: 20px;
   text-decoration: none;
   color: black;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
   transition: transform 0.3s ease-in-out;
   display: flex;
   flex-direction: column;
   align-items: center;
+  transform-origin: center center;
 }
 
 .project-card:hover {
@@ -178,6 +192,21 @@ body {
   text-align: center;
 }
 
+/* Optional: Improve mobile spacing */
+@media (max-width: 480px) {
+  .projects-container {
+    padding: 2em 1rem;
+    gap: 20px;
+  }
+
+  .project-card {
+    padding: 15px;
+  }
+
+  .project-card img {
+    height: 180px;
+  }
+}
 
 /* Skills Section */
 #skills {
@@ -287,6 +316,10 @@ body {
   padding: 20px 30px;
   color: white;
 }
+.btn2:hover {
+  background-color: #c43737;
+  cursor: pointer;
+}
 .btn2 p {
   font-size: 25px;
 }
@@ -342,7 +375,7 @@ body {
   .container {
     flex-direction: column;
     align-items: center;
-    margin-top: 0;
+    margin-top: 10rem;
   }
 
   .left-part, .photo-part {
@@ -398,21 +431,45 @@ body {
 }
 
 
+/* Responsive Behavior */
+@media screen and (max-width: 768px) {
+  .nav {
+    flex-direction: column;
+    height: auto;
+    padding: 1rem;
+  }
+
+  .info {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+
+  .nav h1 {
+    font-size: 1.5rem;
+  }
+
+  .skills-container {
+    padding: 2rem;
+  }
+
+}
 
 
 
 @keyframes motion {
   0% {
-    scale: 1;
+    transform: scale(1);
     filter: grayscale(0.5);
   }
   50% {
-    scale: 0.9;
+    transform: scale(0.9);
     filter: grayscale(0);
     box-shadow: 3px 3px 10px black;
   }
   100% {
-    scale: 1;
+    transform: scale(1);
     filter: grayscale(0.5);
   }
 }
